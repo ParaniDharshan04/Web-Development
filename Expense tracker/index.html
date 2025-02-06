@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Expense Tracker</h1>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <h2>Set Your Budget</h2>
+            <input type="number" id="budgetAmount" placeholder="Total Budget">
+            <button id="setBudgetBtn">Set Budget</button>
+            <p>Total Budget: <span id="totalBudget">$0</span></p>
+        </div>
+
+        <!-- Expense Form -->
+        <div class="expense-form">
+            <h2>Add Expense</h2>
+            <input type="text" id="expenseCategory" placeholder="Description (e.g., Pizza, Uber)">
+            <input type="number" id="expenseAmount" placeholder="Amount">
+            <select id="paymentMethod">
+                <option value="Cash">Cash</option>
+                <option value="Credit">Credit</option>
+                <option value="Debit">Debit</option>
+            </select>
+            <button id="addExpenseBtn">Add Expense</button>
+        </div>
+
+        <!-- Expense List -->
+        <div class="expense-list">
+            <h2>Expense List</h2>
+            <table id="expenseTable">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <!-- Total Expenses Display -->
+            <h3>Total Expenses: <span id="totalExpenses">$0</span></h3>
+        </div>
+
+        <!-- Clear All Button -->
+        <button id="clearAllBtn" class="clear-all">Clear All Expenses</button>
+
+        <!-- Chart Section -->
+        <div class="chart-section">
+            <h2>Expense Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+        <!-- Remaining Amount Section -->
+        <div class="remaining-section">
+            <h2>Remaining Amount</h2>
+            <p>Remaining Budget: <span id="remainingAmount">$0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
